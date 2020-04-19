@@ -13,10 +13,17 @@ using UnityEngine.SceneManagement;
  * deletion, which means we need to take extra measures when resetting the scene.
  */
 public class GameState : MonoBehaviour {
+
+    [System.Serializable]
+    public class MultiDimensionalInt {
+        public GameObject[] items;
+    }
+
+    public MultiDimensionalInt[] rounds;
+
     public static GameState Instance;
 
     public double percentRocksToWin = 50;
-    public int rounds = 3;
 
     public event UnitEventHandler OnGameWin;
     public event UnitEventHandler OnGameLose;

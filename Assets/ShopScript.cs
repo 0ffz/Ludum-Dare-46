@@ -1,17 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using UnityEngine.UI;
 
 public class ShopScript : MonoBehaviour
 {
+    public GameObject imageList;
+    public GameObject rawImageTemplate;
 
-    bool isOver;
+    // round[row].items[column]
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameState.Instance.OnGameStart += CreateMenu;
+
+        Debug.Log(GameState.Instance.Round);
+        foreach (GameObject item in GameState.Instance.rounds[GameState.Instance.Round - 1].items) {
+            SpriteRenderer sr = item.GetComponent<SpriteRenderer>();
+            GameObject newItem = Instantiate(rawImageTemplate);
+            RawImage riUI = newItem.GetComponent<RawImage>();
+            riUI.texture = sr.sprite.texture;
+            riUI.transform.SetParent(imageList.transform, false);
+        }
+
+
     }
 
     // Update is called once per frame
@@ -20,15 +34,19 @@ public class ShopScript : MonoBehaviour
 
     }
 
-    private void OnMouseOver() {
-
-        transform.position += Vector3.right * 10;
-
+    void CreateMenu() {
+        /*
+        foreach(GameObject item in rounds[GameState.Instance.Round - 1].items) {
+            SpriteRenderer sr = item.GetComponent<SpriteRenderer>();
+            GameObject newItem = Instantiate(rawImageTemplate);
+            RawImage riUI = newItem.GetComponent<RawImage>();
+            riUI.texture = sr.sprite.texture;
+            riUI.transform.SetParent(imageList.transform, false);
+        }
+        */
     }
 
-    private void OnMouseExit() {
-        
-
+    public void transferObject() {
 
     }
 
