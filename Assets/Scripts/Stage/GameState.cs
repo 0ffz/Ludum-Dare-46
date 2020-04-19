@@ -12,13 +12,17 @@ public class GameState : MonoBehaviour {
     public static GameState Instance;
 
     public double percentRocksToWin = 50;
+    public int rounds = 3;
 
     public event UnitEventHandler OnGameWin;
     public event UnitEventHandler OnGameLose;
     public event UnitEventHandler OnGameStart;
 
     [NonSerialized] public int RocksDead = 0; //TODO increment
+    [NonSerialized] public int RocksEntered = 0; //TODO increment
     [NonSerialized] public bool PlanningStage = true;
+    [NonSerialized] public int Round = 1;
+    
     public static int LatestStage => PlayerPrefs.GetInt("latestStage", 1);
 
     private const int FirstStageId = 1;
@@ -33,18 +37,18 @@ public class GameState : MonoBehaviour {
             SceneManager.LoadScene("PlanMenu", LoadSceneMode.Additive);
     }
 
-    //TODO run inside the win box script
-    private void Update() {
-        var rocksEntered = 0.0; //TODO use box's script
-        if (percentRocksToWin > rocksEntered / RockSpawner.TotalSpawns) OnGameWin?.Invoke();
-        //lose once it's impossible to reach percent of rocks required for win
-        //TODO get rocksAlive
-        // if ((rocksAlive + rocksEntered) / RockSpawner.TotalSpawns < percentRocksToWin) OnGameLose?.Invoke();
-    }
-
     public void StartPlaying() {
         Instance.PlanningStage = false;
         if (OnGameStart != null) OnGameStart();
+    }
+    
+    public void CheckWin() {
+        if ((double) RocksEntered / RockSpawner.TotalSpawns * 100 > percentRocksToWin) OnGameWin?.Invoke();
+    }
+    
+    public void CheckLoss() {
+        //lose once it's impossible to reach percent of rocks required for win
+        if ((double) RocksDead / RockSpawner.TotalSpawns > 100 - percentRocksToWin) OnGameLose?.Invoke();
     }
 
     public static void LoadStage(string name) {
@@ -58,5 +62,9 @@ public class GameState : MonoBehaviour {
     /** Loads the stage the player has not yet beaten. */
     public static void LoadLatestStage() {
         LoadStage(LatestStage + FirstStageId);
+    }
+
+    public static void LoadNextStage(Scene scene) {
+        LoadStage(scene.buildIndex + 1);
     }
 }
