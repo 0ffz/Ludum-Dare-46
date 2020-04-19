@@ -8,15 +8,14 @@ public class PlayingMenu : MonoBehaviour {
     private void Start() {
         GameState.Instance.OnGameWin += () => {
             transform.GetChild(0).gameObject.SetActive(true);
-            Debug.Log("Win time boys");
         };
     }
 
     public void NextStage() {
-        GameState.LoadNextStage(SceneManager.GetActiveScene());
+        GameState.LoadNextStage();
     }
 
     public void Restart() {
-        GameState.LoadStage(SceneManager.GetActiveScene().buildIndex);
+        GameState.RestartStage();
     }
 }

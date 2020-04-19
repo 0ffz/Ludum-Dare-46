@@ -39,16 +39,16 @@ public class GameState : MonoBehaviour {
 
     public void StartPlaying() {
         Instance.PlanningStage = false;
-        if (OnGameStart != null) OnGameStart();
+        OnGameStart?.Invoke();
     }
     
     public void CheckWin() {
-        if ((double) RocksEntered / RockSpawner.TotalSpawns * 100 > percentRocksToWin) OnGameWin?.Invoke();
+        if ((double) RocksEntered / RockSpawner.TotalSpawns * 100 >= percentRocksToWin) OnGameWin?.Invoke();
     }
     
     public void CheckLoss() {
         //lose once it's impossible to reach percent of rocks required for win
-        if ((double) RocksDead / RockSpawner.TotalSpawns > 100 - percentRocksToWin) OnGameLose?.Invoke();
+        if ((double) RocksDead / RockSpawner.TotalSpawns * 100 > 100 - percentRocksToWin) OnGameLose?.Invoke();
     }
 
     public static void LoadStage(string name) {
@@ -63,8 +63,12 @@ public class GameState : MonoBehaviour {
     public static void LoadLatestStage() {
         LoadStage(LatestStage + FirstStageId);
     }
-
-    public static void LoadNextStage(Scene scene) {
-        LoadStage(scene.buildIndex + 1);
+    
+    public static void RestartStage() {
+        LoadStage(SceneManager.GetActiveScene().buildIndex);
+    }
+    
+    public static void LoadNextStage() {
+        LoadStage(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
