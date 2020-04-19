@@ -1,18 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class IconScript : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+public class IconScript : MonoBehaviour, IDragHandler {
+
+    Camera cam;
+
+    void Start() {
+        cam = Camera.main;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+
+    public GameObject attachedItem;
+
+    public void OnDrag(PointerEventData eventData) {
+        Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        Instantiate(attachedItem,  new Vector3(mousePos.x, mousePos.y), Quaternion.identity);
+        Destroy(gameObject);
     }
 }

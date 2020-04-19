@@ -22,6 +22,8 @@ public class ShopScript : MonoBehaviour
             GameObject newItem = Instantiate(rawImageTemplate);
             RawImage riUI = newItem.GetComponent<RawImage>();
             riUI.texture = sr.sprite.texture;
+            IconScript iconscript = newItem.GetComponent<IconScript>();
+            iconscript.attachedItem = item;
             riUI.transform.SetParent(imageList.transform, false);
         }
 

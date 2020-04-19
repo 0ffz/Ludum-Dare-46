@@ -8,13 +8,34 @@ public class FreeMovable : GameItem
     Camera cam;
     Vector3 relativePos;
     Rigidbody2D rb2d;
+    bool InitialMove;
+    bool hasMoved;
 
     void Start()
     {
+        InitialMove = true;
+        hasMoved = false;
         cam = Camera.main;
         rb2d = GetComponent<Rigidbody2D>();
+        Invoke("isInitialMove", 0.1f);
     }
 
+    void isInitialMove() {
+        if (!hasMoved) {
+            InitialMove = false;
+        }
+    }
+
+    private void Update() {
+        if (Input.GetMouseButton(0) && InitialMove) {
+            var mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+            rb2d.MovePosition(mousePos + relativePos);
+            hasMoved = true;
+        }
+        else {
+            InitialMove = false;
+        }
+    }
 
     private void OnMouseDown() {
         if (!Allowed) return;
@@ -23,7 +44,6 @@ public class FreeMovable : GameItem
 
     private void OnMouseDrag() {
         if (!Allowed) return;
-        Debug.Log(true);
         var mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         rb2d.MovePosition(mousePos + relativePos);
     }
