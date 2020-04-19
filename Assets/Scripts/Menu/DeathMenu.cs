@@ -9,10 +9,6 @@ public class DeathMenu : MonoBehaviour {
         Debug.Log("Started");
     }
 
-    private void OnEnable() {
-        Debug.Log("Started1");
-    }
-
     public void GameOver() {
         gameObject.SetActive(true);
     }

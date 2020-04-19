@@ -33,14 +33,14 @@ public class RockSpawner : MonoBehaviour {
 
     void StartPlaying() {
         foreach(RockSpawn rock in eventSystem)
-            StartCoroutine(wait(rock.delay, rocks[(int) rock.spawnObject], rock.spawns));
+            StartCoroutine(Wait(rock.delay, rocks[(int) rock.spawnObject], rock.spawns));
     }
 
     void Spawn(GameObject rockType, int spawns) {
         for (int i = 0; i < spawns; i++) Instantiate(rockType, transform);
     }
 
-    IEnumerator wait(float seconds, GameObject rockType, int spawns) {
+    IEnumerator Wait(float seconds, GameObject rockType, int spawns) {
         yield return new WaitForSeconds(seconds);
         Spawn(rockType, spawns);
     }

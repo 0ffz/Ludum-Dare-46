@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class PlanningMenu : MonoBehaviour {
     public void StartPlaying() {
-        GameState.Instance.StartPlaying();
+        GameState.Instance.FinishPlanning();
     }
 }

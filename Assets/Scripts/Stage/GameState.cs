@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using Events;
+using Rocks;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,48 +21,58 @@ public class GameState : MonoBehaviour {
     public event UnitEventHandler OnGameWin;
     public event UnitEventHandler OnGameLose;
     public event UnitEventHandler OnPlanComplete;
-    public event UnitEventHandler OnPlanningStart;
+    public event UnitEventHandler OnRoundStart;
 
     [NonSerialized] public int RocksDead = 0; //TODO increment
     [NonSerialized] public int RocksEntered = 0;
     [NonSerialized] public bool PlanningStage = true;
+    [NonSerialized] public bool Dead = false;
     [NonSerialized] public int Round = 1;
-    
+
     public static int LatestStage => PlayerPrefs.GetInt("latestStage", 1);
 
     private const int FirstStageId = 1;
 
-    void OnEnable() {
+    void Awake() {
         Instance = this;
         if (SceneManager.GetActiveScene().buildIndex > LatestStage)
             PlayerPrefs.SetInt("latestStage", LatestStage + 1);
-        
-        //Quick dirty check to see if the menu hasn't already been loaded
-        if (GameObject.Find("Planning Menu") == null)
-            SceneManager.LoadScene("PlanMenu", LoadSceneMode.Additive);
     }
 
     private void Start() {
-        StartPlanning();
+        print("Started gamestate");
+
+        if (!SceneManager.GetSceneByName("PlanMenu").isLoaded)
+            SceneManager.LoadScene("PlanMenu", LoadSceneMode.Additive);
+
+        StartRound();
     }
 
-    public void StartPlaying() {
+    public void FinishPlanning() {
         Instance.PlanningStage = false;
         OnPlanComplete?.Invoke();
     }
-    
+
     public void CheckWin() {
         if ((double) RocksEntered / RockSpawner.TotalSpawns * 100 >= percentRocksToWin) OnGameWin?.Invoke();
     }
-    
+
     public void CheckLoss() {
         //lose once it's impossible to reach percent of rocks required for win
-        if ((double) RocksDead / RockSpawner.TotalSpawns * 100 > 100 - percentRocksToWin) OnGameLose?.Invoke();
+        if ((double) RocksDead / RockSpawner.TotalSpawns * 100 > 100 - percentRocksToWin) {
+            OnGameLose?.Invoke();
+            Dead = true;
+        }
     }
-    
-    public void StartPlanning() {
+
+    public void StartRound() {
+        foreach (var rock in FindObjectsOfType<Rock>())
+            Destroy(rock.gameObject);
         PlanningStage = true;
-        OnPlanningStart?.Invoke();
+        RocksDead = 0;
+        RocksEntered = 0;
+        print("Round is starting");
+        OnRoundStart?.Invoke();
     }
 
     public static void LoadStage(string name) {
@@ -73,11 +87,11 @@ public class GameState : MonoBehaviour {
     public static void LoadLatestStage() {
         LoadStage(LatestStage + FirstStageId);
     }
-    
+
     public static void RestartStage() {
         LoadStage(SceneManager.GetActiveScene().buildIndex);
     }
-    
+
     public static void LoadNextStage() {
         LoadStage(SceneManager.GetActiveScene().buildIndex + 1);
     }
