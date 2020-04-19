@@ -655,8 +655,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c763c1107c3ae409bfde8a8fd607f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rounds:
+  - items:
+    - {fileID: 7906042346325935687, guid: 6430b378fcd2d6442bc0832d4d8a0462, type: 3}
   percentRocksToWin: 50
-  rounds: 3
 --- !u!1 &1795164459
 GameObject:
   m_ObjectHideFlags: 0

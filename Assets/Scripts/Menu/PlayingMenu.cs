@@ -6,7 +6,7 @@ public class PlayingMenu : MonoBehaviour {
     }
 
     public void NextRound() {
-        if (GameState.Instance.Round >= GameState.Instance.rounds)
+        if (GameState.Instance.Round >= GameState.Instance.MaxRounds)
             GameState.LoadNextStage();
         else {
             GameState.Instance.Round++;

@@ -37,7 +37,8 @@ public class GameState : MonoBehaviour {
     [NonSerialized] public int Round = 1;
 
     public static int LatestStage => PlayerPrefs.GetInt("latestStage", 1);
-
+    public int MaxRounds => rounds.Length;
+    
     private const int FirstStageId = 1;
 
     void Awake() {

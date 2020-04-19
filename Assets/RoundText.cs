@@ -7,7 +7,7 @@ public class RoundText : MonoBehaviour {
     // Start is called before the first frame update
     void OnEnable() {
         GameState.Instance.OnRoundStart += () => {
-            GetComponent<TextMeshProUGUI>().text = "Round " + GameState.Instance.Round + "/" + GameState.Instance.rounds;
+            GetComponent<TextMeshProUGUI>().text = "Round " + GameState.Instance.Round + "/" + GameState.Instance.MaxRounds;
         };
     }
 }
