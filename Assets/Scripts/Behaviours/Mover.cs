@@ -16,6 +16,8 @@ public class Mover : GameItem {
     Rigidbody2D rb2d;
 
     void Start() {
+        //During GamePhase (not prep phase)
+
         rb2d = GetComponent<Rigidbody2D>();
         initPos = transform.position;
         lr = GetComponentInChildren<LineRenderer>();
