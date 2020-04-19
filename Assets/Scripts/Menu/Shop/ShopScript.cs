@@ -28,6 +28,4 @@ public class ShopScript : MonoBehaviour {
     public void transferObject() {
         Debug.Log("Button pressed");
     }
-
-
 }
