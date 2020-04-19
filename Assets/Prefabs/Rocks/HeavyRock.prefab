@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4211032995682972952}
   - component: {fileID: 4211032995682972953}
   - component: {fileID: 4211032995682972954}
+  - component: {fileID: -7628529755955654256}
   m_Layer: 8
   m_Name: HeavyRock
   m_TagString: Untagged
@@ -120,3 +121,15 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.043442603}
   m_Size: {x: 4.766675, y: 4.3064656}
   m_Direction: 1
+--- !u!114 &-7628529755955654256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4211032995682972955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04c3cc6d08e849e7acda47139bed042c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

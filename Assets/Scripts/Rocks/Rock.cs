@@ -1,17 +1,18 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Rocks {
-    public class Rock: MonoBehaviour {
-        private void Start() {
-            
+    public class Rock : MonoBehaviour {
+        private void Update() {
+            if (transform.position.y < -50)
+                Die();
         }
 
-        private void Update() {
-            //TODO kill if too far
+        public void Die() {
+            GameState.Instance.RocksDead++;
+            GameState.Instance.CheckLoss();
+            Destroy(gameObject);
         }
-        
-        //TODO kill if colliding with an object with a KillOnCollide behaviour
-        //TODO increment deaths in GameState on death
     }
 }
