@@ -1398,7 +1398,6 @@ GameObject:
   - component: {fileID: 1342007234}
   - component: {fileID: 1342007237}
   - component: {fileID: 1342007236}
-  - component: {fileID: 1342007235}
   - component: {fileID: 1342007238}
   - component: {fileID: 1342007239}
   - component: {fileID: 1342007240}
@@ -1430,20 +1429,6 @@ RectTransform:
   m_AnchoredPosition: {x: -257.4, y: 0}
   m_SizeDelta: {x: -514.8, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1342007235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1342007233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b506188c2872fa7428537b2eccf1c962, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imageList: {fileID: 0}
-  rawImageTemplate: {fileID: 0}
 --- !u!114 &1342007236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1522,7 +1507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba799d0c75314c04e8e2c9a1edad8111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showOnRoundStart: 1
+  showOnRoundStart: 0
 --- !u!114 &1342007240
 MonoBehaviour:
   m_ObjectHideFlags: 0
