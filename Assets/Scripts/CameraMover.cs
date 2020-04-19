@@ -23,12 +23,10 @@ public class CameraMover : MonoBehaviour
     {
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetMouseButton(1)) {
+        if (Input.GetMouseButton(1))
             transform.position += initialPosition - mousePos;
-        }
-        else {
+        else
             initialPosition = mousePos;
-        }
 
         cam.orthographicSize = Mathf.Clamp(cam.orthographicSize + Input.mouseScrollDelta.y * scrollSens * -1, minCamSize, maxCamSize);
     }

@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace Behaviours {
     public class RockKillable: MonoBehaviour {
-        private void OnTriggerEnter2D(Collider2D other) {
-            if (other.gameObject.layer != 8) return;
-            var rock = other.GetComponent<Rock>();
+        void OnCollisionEnter2D(Collision2D collision){
+            if (collision.gameObject.layer != 8) return;
+            var rock = collision.gameObject.GetComponent<Rock>();
             rock.Die();
         }
     }
