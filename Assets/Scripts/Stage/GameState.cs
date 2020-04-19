@@ -19,7 +19,7 @@ public class GameState : MonoBehaviour {
     public event UnitEventHandler OnGameStart;
 
     [NonSerialized] public int RocksDead = 0; //TODO increment
-    [NonSerialized] public int RocksEntered = 0; //TODO increment
+    [NonSerialized] public int RocksEntered = 0;
     [NonSerialized] public bool PlanningStage = true;
     [NonSerialized] public int Round = 1;
     
