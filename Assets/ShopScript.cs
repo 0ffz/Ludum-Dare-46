@@ -9,13 +9,6 @@ public class ShopScript : MonoBehaviour
     public GameObject imageList;
     public GameObject rawImageTemplate;
 
-    [System.Serializable]
-    public class MultiDimensionalInt {
-        public GameObject[] items;
-    }
-
-    public MultiDimensionalInt[] rounds;
-
     // round[row].items[column]
 
     // Start is called before the first frame update
@@ -24,7 +17,7 @@ public class ShopScript : MonoBehaviour
         GameState.Instance.OnGameStart += CreateMenu;
 
         Debug.Log(GameState.Instance.Round);
-        foreach (GameObject item in rounds[GameState.Instance.Round - 1].items) {
+        foreach (GameObject item in GameState.Instance.rounds[GameState.Instance.Round - 1].items) {
             SpriteRenderer sr = item.GetComponent<SpriteRenderer>();
             GameObject newItem = Instantiate(rawImageTemplate);
             RawImage riUI = newItem.GetComponent<RawImage>();
