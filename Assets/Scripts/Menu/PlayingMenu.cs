@@ -12,7 +12,12 @@ public class PlayingMenu : MonoBehaviour {
     }
 
     public void NextStage() {
-        GameState.LoadNextStage();
+        if(GameState.Instance.Round > GameState.Instance.rounds)
+            GameState.LoadNextStage();
+        else {
+            GameState.Instance.Round++;
+            GameState.Instance.StartPlanning();
+        }
     }
 
     public void Restart() {

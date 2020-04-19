@@ -16,7 +16,8 @@ public class GameState : MonoBehaviour {
 
     public event UnitEventHandler OnGameWin;
     public event UnitEventHandler OnGameLose;
-    public event UnitEventHandler OnGameStart;
+    public event UnitEventHandler OnPlanComplete;
+    public event UnitEventHandler OnPlanningStart;
 
     [NonSerialized] public int RocksDead = 0; //TODO increment
     [NonSerialized] public int RocksEntered = 0;
@@ -37,9 +38,13 @@ public class GameState : MonoBehaviour {
             SceneManager.LoadScene("PlanMenu", LoadSceneMode.Additive);
     }
 
+    private void Start() {
+        StartPlanning();
+    }
+
     public void StartPlaying() {
         Instance.PlanningStage = false;
-        OnGameStart?.Invoke();
+        OnPlanComplete?.Invoke();
     }
     
     public void CheckWin() {
@@ -49,6 +54,11 @@ public class GameState : MonoBehaviour {
     public void CheckLoss() {
         //lose once it's impossible to reach percent of rocks required for win
         if ((double) RocksDead / RockSpawner.TotalSpawns * 100 > 100 - percentRocksToWin) OnGameLose?.Invoke();
+    }
+    
+    public void StartPlanning() {
+        PlanningStage = true;
+        OnPlanningStart?.Invoke();
     }
 
     public static void LoadStage(string name) {

@@ -27,7 +27,7 @@ public class RockSpawner : MonoBehaviour {
     public static int TotalSpawns;
     
     void Start() {
-        GameState.Instance.OnGameStart += StartPlaying;
+        GameState.Instance.OnPlanComplete += StartPlaying;
         TotalSpawns = eventSystem.Sum(spawn => spawn.spawns);
     }
 
