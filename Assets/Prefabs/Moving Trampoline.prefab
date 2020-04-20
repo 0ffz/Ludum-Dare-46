@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 7935159943133680562}
   - component: {fileID: 7935159943133680563}
   m_Layer: 0
-  m_Name: Trampline
+  m_Name: Moving Trampoline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,7 +157,7 @@ Transform:
   m_GameObject: {fileID: 7935159943133680560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.61, y: 0.24, z: 0}
-  m_LocalScale: {x: 5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.8, z: 1}
   m_Children:
   - {fileID: 7935159943024757391}
   m_Father: {fileID: 0}
@@ -202,8 +202,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4e9ecaee1010d93458483286abf03e8d, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.09538126, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 117aca74c7eeb0848a265bdc377e1ffe, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -246,14 +246,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 15, y: 5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 15, y: 1.5}
   m_EdgeRadius: 0
 --- !u!50 &7935159943133680563
 Rigidbody2D:
