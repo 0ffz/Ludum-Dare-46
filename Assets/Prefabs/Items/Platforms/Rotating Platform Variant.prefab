@@ -89,23 +89,28 @@ PrefabInstance:
     - target: {fileID: 3684621363296948007, guid: 5490caa6af742a64cb46e857b81add36,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.8584906
+      value: 0.735849
       objectReference: {fileID: 0}
     - target: {fileID: 3684621363296948007, guid: 5490caa6af742a64cb46e857b81add36,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.38470095
+      value: 0.5297642
       objectReference: {fileID: 0}
     - target: {fileID: 3684621363296948007, guid: 5490caa6af742a64cb46e857b81add36,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.5956086
+      value: 0.3436276
       objectReference: {fileID: 0}
     - target: {fileID: 3684621363296948011, guid: 5490caa6af742a64cb46e857b81add36,
         type: 3}
       propertyPath: m_Name
       value: Rotating Platform Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5041204432233582828, guid: 5490caa6af742a64cb46e857b81add36,
+        type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 2800000, guid: 1376f7f56bffbc34a92c64edc7e4dc11, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5490caa6af742a64cb46e857b81add36, type: 3}
 --- !u!1 &4439359973657957907 stripped

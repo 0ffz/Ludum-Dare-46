@@ -230,7 +230,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allowInPlan: 0
   allowInPlay: 1
-  lockOnPlanComplete: 0
 --- !u!50 &1313209923728812304
 Rigidbody2D:
   serializedVersion: 4
@@ -312,3 +311,4 @@ MonoBehaviour:
   allowInPlan: 1
   allowInPlay: 0
   lockOnPlanComplete: 1
+  icon: {fileID: 2800000, guid: 1376f7f56bffbc34a92c64edc7e4dc11, type: 3}
