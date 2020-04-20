@@ -17,6 +17,8 @@ public class ShopScript : MonoBehaviour {
             Hide();
         }; 
         _startX = transform.position.x;
+        transform.DOMoveX(-100, 0);
+        Show();
         print("onenable was called!");
     }
 
