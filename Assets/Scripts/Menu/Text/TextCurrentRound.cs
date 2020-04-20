@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class RoundText : MonoBehaviour {
+public class TextCurrentRound : MonoBehaviour {
     // Start is called before the first frame update
     void OnEnable() {
         GameState.Instance.OnRoundStart += () => {

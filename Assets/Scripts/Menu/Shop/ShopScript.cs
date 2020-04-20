@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ShopScript : MonoBehaviour {
@@ -14,6 +11,7 @@ public class ShopScript : MonoBehaviour {
 
     void CreateItems() {
         foreach (FreeMovable item in GameState.Instance.rounds[GameState.Instance.Round - 1].items) {
+            if(item == null) continue;
             SpriteRenderer sr = item.GetComponent<SpriteRenderer>();
             GameObject newItem = Instantiate(rawImageTemplate);
             RawImage riUI = newItem.GetComponent<RawImage>();

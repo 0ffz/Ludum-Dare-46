@@ -37,6 +37,7 @@ public class GameState : MonoBehaviour {
 
     public static int LatestStage => PlayerPrefs.GetInt("latestStage", 1);
     public int MaxRounds => rounds.Length;
+    public double TotalRocksToWin => percentRocksToWin / 100 * RockSpawner.TotalSpawns;
 
     private const int FirstStageId = 1;
 
@@ -61,16 +62,23 @@ public class GameState : MonoBehaviour {
         OnPlanComplete?.Invoke();
     }
 
+    public event UnitEventHandler OnRockEnter;
+
     public void CheckWin() {
-        if ((double) RocksEntered / RockSpawner.TotalSpawns * 100 >= percentRocksToWin) OnGameWin?.Invoke();
+        if (RocksEntered >= TotalRocksToWin) OnGameWin?.Invoke();
+        OnRockEnter?.Invoke();
     }
+
+    public event UnitEventHandler OnRockDie;
 
     public void CheckLoss() {
         //lose once it's impossible to reach percent of rocks required for win
-        if ((double) RocksDead / RockSpawner.TotalSpawns * 100 > 100 - percentRocksToWin) {
+        if (RockSpawner.TotalSpawns - RocksDead < TotalRocksToWin) {
             OnGameLose?.Invoke();
             Dead = true;
         }
+
+        OnRockDie?.Invoke();
     }
 
     public void StartRound() {
