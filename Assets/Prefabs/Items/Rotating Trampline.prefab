@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1529185282144717708}
   - component: {fileID: 1529185282144717699}
   - component: {fileID: 1529185282144717698}
+  - component: {fileID: -9087422797993152854}
   m_Layer: 0
   m_Name: Rotating Trampline
   m_TagString: Untagged
@@ -146,6 +147,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &-9087422797993152854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529185282144717697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd62f7c7c5bf0a4ea064068d6bf9423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allowInPlan: 1
+  allowInPlay: 0
+  lockOnPlanComplete: 1
 --- !u!1 &1529185282253902525
 GameObject:
   m_ObjectHideFlags: 0
