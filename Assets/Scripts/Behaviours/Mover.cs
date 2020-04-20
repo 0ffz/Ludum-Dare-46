@@ -15,10 +15,8 @@ public class Mover : GameItem {
     Camera cam;
     Rigidbody2D rb2d;
 
-    void Start() {
-        //During GamePhase (not prep phase)
 
-        rb2d = GetComponent<Rigidbody2D>();
+    void freemove() {
         initPos = transform.position;
         lr = GetComponentInChildren<LineRenderer>();
         lr.useWorldSpace = true;
@@ -35,8 +33,15 @@ public class Mover : GameItem {
         }
     }
 
-    // Gets position relative to fan
-    private void OnMouseDown() {
+    void Start() {
+
+        rb2d = GetComponent<Rigidbody2D>();
+        GameState.Instance.OnPlanComplete += freemove;
+
+    }
+
+// Gets position relative to fan
+private void OnMouseDown() {
         if (!Allowed) return;
         relativePos = transform.position - cam.ScreenToWorldPoint(Input.mousePosition);
     }
