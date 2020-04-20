@@ -44,10 +44,13 @@ public class CameraMover : MonoBehaviour {
     void Update() {
         if (_ignoreInput) return;
 
+        if (Input.GetMouseButtonDown(1)) {
+            _initialPosition = MousePos;
+            return;
+        }
+        
         if (Input.GetMouseButton(1))
             transform.position += _initialPosition - MousePos;
-        else
-            _initialPosition = MousePos;
 
         _cam.orthographicSize = Mathf.Clamp(_cam.orthographicSize + Input.mouseScrollDelta.y * scrollSens * -1,
             minCamSize, maxCamSize);
