@@ -15,9 +15,16 @@ public class Tutotial2Script : MonoBehaviour
         if (GameState.Instance.Round == 1) {
             textObjects[0].SetActive(true);
             textObjects[1].SetActive(true);
+            textObjects[2].SetActive(false);
         }
-        else {
+        else if (GameState.Instance.Round == 2) {
             textObjects[0].SetActive(false);
+            textObjects[2].SetActive(true);
+        }
+        else
+        {
+            textObjects[0].SetActive(false);
+            textObjects[2].SetActive(false);
         }
     }
 
