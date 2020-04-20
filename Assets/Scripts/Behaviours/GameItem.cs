@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -6,11 +7,11 @@ public class GameItem : MonoBehaviour {
     public bool allowInPlay;
     public static GameObject CurrentlyActive = null;
 
-    void OnMouseUp() {
+    public void OnMouseUp() {
         if (CurrentlyActive == gameObject) CurrentlyActive = null;
     }
     
-    void OnMouseDown() {
+    public void OnMouseDown() {
         if (CurrentlyActive == null) CurrentlyActive = gameObject;
     }
 

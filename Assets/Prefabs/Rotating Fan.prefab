@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allowInPlan: 0
-  allowInPlay: 0
+  allowInPlay: 1
 --- !u!50 &1313209923728812304
 Rigidbody2D:
   serializedVersion: 4

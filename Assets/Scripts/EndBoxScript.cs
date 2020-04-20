@@ -10,7 +10,6 @@ public class EndBoxScript : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.layer != 8) return;
         var otherObject = other.gameObject;
-        Debug.Log(other);
 
         SpriteRenderer sr = other.gameObject.GetComponent<SpriteRenderer>();
 

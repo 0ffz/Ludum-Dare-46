@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class Mover : GameItem {
+public class AxisMovable : GameItem {
     public float trackLength;
 
     public enum Direction {
@@ -26,7 +26,12 @@ public class Mover : GameItem {
         DrawLine();
     }
 
-    private void DrawLine() {
+    // public override void Interact() {
+        // base.Interact();
+        // OnMouseDrag();
+    // }
+
+    public void DrawLine() {
         //Draw Line
         if (dir == Direction.Vertical) {
             lr.SetPosition(0, (Vector3.up * -trackLength) + InitPos);
@@ -39,7 +44,7 @@ public class Mover : GameItem {
     }
 
     // Gets position relative to fan
-    private void OnMouseDown() {
+    public void OnMouseDown() {
         if (!Allowed) return;
         relativePos = transform.position - cam.ScreenToWorldPoint(Input.mousePosition);
     }

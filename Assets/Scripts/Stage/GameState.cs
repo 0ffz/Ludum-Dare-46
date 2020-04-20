@@ -13,10 +13,9 @@ using UnityEngine.SceneManagement;
  * deletion, which means we need to take extra measures when resetting the scene.
  */
 public class GameState : MonoBehaviour {
-
     [Serializable]
     public class MultiDimensionalInt {
-        public GameObject[] items;
+        public FreeMovable[] items;
     }
 
     public MultiDimensionalInt[] rounds;
@@ -38,20 +37,22 @@ public class GameState : MonoBehaviour {
 
     public static int LatestStage => PlayerPrefs.GetInt("latestStage", 1);
     public int MaxRounds => rounds.Length;
-    
+
     private const int FirstStageId = 1;
 
     void Awake() {
         Instance = this;
         if (SceneManager.GetActiveScene().buildIndex > LatestStage)
             PlayerPrefs.SetInt("latestStage", LatestStage + 1);
-        
-        if (!SceneManager.GetSceneByName("PlanMenu").isLoaded)
-            SceneManager.LoadScene("PlanMenu", LoadSceneMode.Additive);
     }
 
     private void Start() {
+        StartCoroutine(LoadScene());
+    }
 
+    private IEnumerator LoadScene() {
+        if (!SceneManager.GetSceneByName("PlanMenu").isLoaded)
+            yield return SceneManager.LoadSceneAsync("PlanMenu", LoadSceneMode.Additive);
         StartRound();
     }
 
@@ -78,7 +79,6 @@ public class GameState : MonoBehaviour {
         PlanningStage = true;
         RocksDead = 0;
         RocksEntered = 0;
-        print("Round is starting");
         OnRoundStart?.Invoke();
     }
 

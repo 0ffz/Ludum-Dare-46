@@ -13,8 +13,7 @@ public class ShopScript : MonoBehaviour {
     }
 
     void CreateItems() {
-        print("Creating items");
-        foreach (GameObject item in GameState.Instance.rounds[GameState.Instance.Round - 1].items) {
+        foreach (FreeMovable item in GameState.Instance.rounds[GameState.Instance.Round - 1].items) {
             SpriteRenderer sr = item.GetComponent<SpriteRenderer>();
             GameObject newItem = Instantiate(rawImageTemplate);
             RawImage riUI = newItem.GetComponent<RawImage>();
@@ -23,9 +22,5 @@ public class ShopScript : MonoBehaviour {
             iconscript.attachedItem = item;
             riUI.transform.SetParent(imageList.transform, false);
         }
-    }
-
-    public void transferObject() {
-        Debug.Log("Button pressed");
     }
 }
