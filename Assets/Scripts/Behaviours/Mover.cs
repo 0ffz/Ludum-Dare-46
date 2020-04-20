@@ -1,47 +1,45 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Mover : GameItem {
     public float trackLength;
 
-    public enum direction {
+    public enum Direction {
         Horizontal,
         Vertical
     }
 
-    public direction dir;
+    public Direction dir;
     Vector3 relativePos;
-    Vector3 initPos;
+    [NonSerialized] public Vector3 InitPos;
     LineRenderer lr;
     Camera cam;
     Rigidbody2D rb2d;
 
-
-    void freemove() {
-        initPos = transform.position;
+    void Start() {
+        rb2d = GetComponent<Rigidbody2D>();
+        InitPos = transform.position;
         lr = GetComponentInChildren<LineRenderer>();
         lr.useWorldSpace = true;
         cam = Camera.main;
+        
+        DrawLine();
+    }
 
+    private void DrawLine() {
         //Draw Line
-        if (dir == direction.Vertical) {
-            lr.SetPosition(0, (Vector3.up * -trackLength) + initPos);
-            lr.SetPosition(1, (Vector3.up * trackLength) + initPos);
+        if (dir == Direction.Vertical) {
+            lr.SetPosition(0, (Vector3.up * -trackLength) + InitPos);
+            lr.SetPosition(1, (Vector3.up * trackLength) + InitPos);
         }
         else {
-            lr.SetPosition(0, (Vector3.right * -trackLength) + initPos);
-            lr.SetPosition(1, (Vector3.right * trackLength) + initPos);
+            lr.SetPosition(0, (Vector3.right * -trackLength) + InitPos);
+            lr.SetPosition(1, (Vector3.right * trackLength) + InitPos);
         }
     }
 
-    void Start() {
-
-        rb2d = GetComponent<Rigidbody2D>();
-        GameState.Instance.OnPlanComplete += freemove;
-
-    }
-
-// Gets position relative to fan
-private void OnMouseDown() {
+    // Gets position relative to fan
+    private void OnMouseDown() {
         if (!Allowed) return;
         relativePos = transform.position - cam.ScreenToWorldPoint(Input.mousePosition);
     }
@@ -50,14 +48,15 @@ private void OnMouseDown() {
     private void OnMouseDrag() {
         if (!Allowed) return;
         var mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        if (dir == direction.Horizontal) {
+        if (dir == Direction.Horizontal) {
             rb2d.MovePosition(new Vector2(
-                Mathf.Clamp(mousePos.x + relativePos.x, -trackLength + initPos.x, trackLength + initPos.x),
-                initPos.y));
+                Mathf.Clamp(mousePos.x + relativePos.x, -trackLength + InitPos.x, trackLength + InitPos.x),
+                InitPos.y));
         }
         else {
-            rb2d.MovePosition( new Vector2(initPos.x,
-                Mathf.Clamp(mousePos.y + relativePos.y, -trackLength + initPos.y, trackLength + initPos.y)));
+            rb2d.MovePosition(new Vector2(InitPos.x,
+                Mathf.Clamp(mousePos.y + relativePos.y, -trackLength + InitPos.y, trackLength + InitPos.y)));
         }
+        DrawLine();
     }
 }
