@@ -8,6 +8,7 @@ public class FreeMovable : GameItem {
     private AxisMovable _axisMovable;
     public bool lockOnPlanComplete = true;
     [NonSerialized] public bool Locked = true;
+    public Texture2D icon = null;
 
     void Start() {
         _cam = Camera.main;
