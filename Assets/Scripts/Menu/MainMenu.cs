@@ -10,5 +10,10 @@ namespace Menu {
         public void QuitGame() {
             Application.Quit();
         }
+
+        public void RestartGame() {
+            PlayerPrefs.DeleteKey("latestStage");
+            GameState.LoadLatestStage();
+        }
     }
 }

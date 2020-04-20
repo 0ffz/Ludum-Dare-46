@@ -55,7 +55,7 @@ public class GameState : MonoBehaviour {
     void Awake() {
         Instance = this;
         if (SceneManager.GetActiveScene().buildIndex > LatestStage)
-            PlayerPrefs.SetInt("latestStage", LatestStage + 1);
+            PlayerPrefs.SetInt("latestStage", LatestStage);
     }
 
     private void Start() {
