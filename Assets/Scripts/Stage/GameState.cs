@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using Events;
 using Rocks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 /**
  * The status of the game. Follows a singleton pattern, meaning only one instance of this object should
@@ -17,6 +19,7 @@ public class GameState : MonoBehaviour {
     public class RoundInfo {
         public FreeMovable[] items;
         public int itemPicks;
+        public Transform boxLocation;
         [NonSerialized] public int RocksDead = 0;
         [NonSerialized] public int RocksEntered = 0;
         [NonSerialized] public bool PlanningStage = true;
@@ -40,6 +43,7 @@ public class GameState : MonoBehaviour {
     public static int LatestStage => PlayerPrefs.GetInt("latestStage", 1);
     public int MaxRounds => rounds.Length;
     public double TotalRocksToWin => percentRocksToWin / 100 * RockSpawner.TotalSpawns;
+    public GameObject box;
 
     private const int FirstStageId = 1;
 
@@ -86,6 +90,8 @@ public class GameState : MonoBehaviour {
     public void StartRound() {
         foreach (var rock in FindObjectsOfType<Rock>())
             Destroy(rock.gameObject);
+        box.transform.DOMove(CurrentRound.boxLocation.position, 1);
+        print("invoking OnRoundStart");
         OnRoundStart?.Invoke();
     }
 
