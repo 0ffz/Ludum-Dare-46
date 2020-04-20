@@ -7,6 +7,7 @@ namespace Rocks {
         private void Update() {
             if (transform.position.y < -50)
                 Die();
+        
         }
 
         public void Die() {
@@ -14,5 +15,7 @@ namespace Rocks {
             GameState.Instance.CheckLoss();
             Destroy(gameObject);
         }
+
+
     }
 }

@@ -12,7 +12,6 @@ public class upAndDown : MonoBehaviour
     void Start()
     {
         startPos = transform.position;
-        Debug.Log(" speed :" + speed);
     }
 
     void Update()
