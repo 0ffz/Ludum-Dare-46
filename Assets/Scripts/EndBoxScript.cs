@@ -13,7 +13,7 @@ public class EndBoxScript : MonoBehaviour {
 
         SpriteRenderer sr = other.gameObject.GetComponent<SpriteRenderer>();
 
-        var newExplosion = Instantiate(explosion, otherObject.transform.position, otherObject.transform.rotation);
+        var newExplosion = Instantiate(explosion, otherObject.transform.position, Quaternion.identity);
         ParticleSystem ps = newExplosion.GetComponent<ParticleSystem>();
         var col = ps.colorOverLifetime;
         Gradient grad = new Gradient();
