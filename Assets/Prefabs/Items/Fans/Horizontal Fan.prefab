@@ -143,7 +143,7 @@ MonoBehaviour:
   allowInPlan: 1
   allowInPlay: 1
   trackLength: 2
-  dir: 1
+  dir: 0
 --- !u!114 &2977246689333594554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,10 +165,39 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5572001280837740, guid: 1fbc1816707e58348a9b27c83ca62731, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5c5bf036ca078a141b9c1b9b30b1f6ef, type: 2}
+    - target: {fileID: 1313209922907465424, guid: 1fbc1816707e58348a9b27c83ca62731,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313209922907465424, guid: 1fbc1816707e58348a9b27c83ca62731,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313209922907465424, guid: 1fbc1816707e58348a9b27c83ca62731,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.071
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313209922907465424, guid: 1fbc1816707e58348a9b27c83ca62731,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 15.995028
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313209922907465424, guid: 1fbc1816707e58348a9b27c83ca62731,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 11.434613
+      objectReference: {fileID: 0}
     - target: {fileID: 1313209923728812305, guid: 1fbc1816707e58348a9b27c83ca62731,
         type: 3}
       propertyPath: m_Name
-      value: Moving Fan Variant
+      value: Horizontal Fan
       objectReference: {fileID: 0}
     - target: {fileID: 1313209923728812308, guid: 1fbc1816707e58348a9b27c83ca62731,
         type: 3}
@@ -225,6 +254,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1313209923728812309, guid: 1fbc1816707e58348a9b27c83ca62731,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 68ea776380e28a148a70b906e7d8f715,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 1313209923728812310, guid: 1fbc1816707e58348a9b27c83ca62731, type: 3}
     - {fileID: -5255003599846726733, guid: 1fbc1816707e58348a9b27c83ca62731, type: 3}
