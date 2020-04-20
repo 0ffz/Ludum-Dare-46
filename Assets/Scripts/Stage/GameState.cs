@@ -45,17 +45,16 @@ public class GameState : MonoBehaviour {
     [NonSerialized] public bool Dead = false;
     [NonSerialized] public int Round = 1;
 
-    public static int LatestStage => PlayerPrefs.GetInt("latestStage", 1);
+    public static int LatestStage => PlayerPrefs.GetInt("latestStage", 2);
     public int MaxRounds => rounds.Length;
     public int TotalRocksToWin => (int) Mathf.Ceil((float) (percentRocksToWin / 100 * RockSpawner.TotalSpawns));
     public GameObject box;
 
-    private const int FirstStageId = 1;
 
     void Awake() {
         Instance = this;
         if (SceneManager.GetActiveScene().buildIndex > LatestStage)
-            PlayerPrefs.SetInt("latestStage", LatestStage);
+            PlayerPrefs.SetInt("latestStage", SceneManager.GetActiveScene().buildIndex);
     }
 
     private void Start() {
@@ -110,7 +109,7 @@ public class GameState : MonoBehaviour {
 
     /** Loads the stage the player has not yet beaten. */
     public static void LoadLatestStage() {
-        LoadStage(LatestStage + FirstStageId);
+        LoadStage(LatestStage);
     }
 
     public static void RestartStage() {
