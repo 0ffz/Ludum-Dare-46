@@ -9,21 +9,25 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
+[Serializable]
+public sealed class RoundInfo {
+    public FreeMovable[] items;
+    public int itemPicks;
+    public Transform boxLocation;
+    public RockSpawn[] RockSpawns => rockSpawns.Length == 0 ? GameState.Instance.rounds[0].rockSpawns : rockSpawns;
+    [SerializeField] private RockSpawn[] rockSpawns;
+    
+    [NonSerialized] public int RocksDead = 0;
+    [NonSerialized] public int RocksEntered = 0;
+    [NonSerialized] public bool PlanningStage = true;
+}
+
 /**
  * The status of the game. Follows a singleton pattern, meaning only one instance of this object should
  * ever exist. The reason we don't use static here is because static fields don't get reset on object
  * deletion, which means we need to take extra measures when resetting the scene.
  */
 public class GameState : MonoBehaviour {
-    [Serializable]
-    public class RoundInfo {
-        public FreeMovable[] items;
-        public int itemPicks;
-        public Transform boxLocation;
-        [NonSerialized] public int RocksDead = 0;
-        [NonSerialized] public int RocksEntered = 0;
-        [NonSerialized] public bool PlanningStage = true;
-    }
 
     public static GameState Instance;
     public static RoundInfo CurrentRound => Instance.rounds[Instance.Round - 1];
@@ -36,13 +40,14 @@ public class GameState : MonoBehaviour {
     public event UnitEventHandler OnGameLose;
     public event UnitEventHandler OnPlanComplete;
     public event UnitEventHandler OnRoundStart;
+    public GameObject[] rocks;
 
     [NonSerialized] public bool Dead = false;
     [NonSerialized] public int Round = 1;
 
     public static int LatestStage => PlayerPrefs.GetInt("latestStage", 1);
     public int MaxRounds => rounds.Length;
-    public double TotalRocksToWin => percentRocksToWin / 100 * RockSpawner.TotalSpawns;
+    public int TotalRocksToWin => (int) Mathf.Ceil((float) (percentRocksToWin / 100 * RockSpawner.TotalSpawns));
     public GameObject box;
 
     private const int FirstStageId = 1;

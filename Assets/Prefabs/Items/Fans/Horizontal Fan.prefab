@@ -142,6 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allowInPlan: 1
   allowInPlay: 1
+  lockOnPlanComplete: 0
   trackLength: 2
   dir: 0
 --- !u!114 &2977246689333594554
@@ -158,6 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allowInPlan: 1
   allowInPlay: 0
+  lockOnPlanComplete: 1
 --- !u!1001 &9191445345730277206
 PrefabInstance:
   m_ObjectHideFlags: 0

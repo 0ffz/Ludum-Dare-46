@@ -6,12 +6,14 @@ public abstract class GameItem : MonoBehaviour {
     public bool allowInPlan;
     public bool allowInPlay;
     public static GameObject CurrentlyActive = null;
-    public bool lockOnPlanComplete = false;
+    public bool lockOnPlanComplete;
     private bool _locked = false;
 
     private void Start() {
-        if (lockOnPlanComplete)
-            GameState.Instance.OnPlanComplete += () => _locked = true;
+        if (lockOnPlanComplete) {
+            print("locking");
+            GameState.Instance.OnPlanComplete += () => _locked = true;   
+        }
     }
 
     public void OnMouseUp() {

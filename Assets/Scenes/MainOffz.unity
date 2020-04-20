@@ -565,7 +565,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1488714103}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9425534d0e5685145bd754d2d31752a1, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -879,8 +879,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c763c1107c3ae409bfde8a8fd607f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rounds:
+  - items: []
+    itemPicks: 0
+    boxLocation: {fileID: 712655405}
   percentRocksToWin: 50
-  rounds: 3
+  box: {fileID: 712655400}
 --- !u!1 &1795164459
 GameObject:
   m_ObjectHideFlags: 0

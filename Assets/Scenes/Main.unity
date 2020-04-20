@@ -727,17 +727,17 @@ PrefabInstance:
     - target: {fileID: 3115888148329157741, guid: c77b71a9191c315489d6bde5d8894cc7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -362.45
+      value: 39.7
       objectReference: {fileID: 0}
     - target: {fileID: 3115888148329157741, guid: c77b71a9191c315489d6bde5d8894cc7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -489.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3115888148329157741, guid: c77b71a9191c315489d6bde5d8894cc7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1110.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3115888148329157741, guid: c77b71a9191c315489d6bde5d8894cc7,
         type: 3}
@@ -1061,7 +1061,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716066371}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 400.4104, y: 487.93823, z: -1110.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 55626067}
@@ -1087,13 +1087,25 @@ MonoBehaviour:
     - {fileID: 0}
     itemPicks: 1
     boxLocation: {fileID: 712655405}
+    rockSpawns:
+    - spawnObject: 0
+      spawns: 5
+      delay: 0
   - items:
     - {fileID: 1771520649}
     - {fileID: 1156290413}
     - {fileID: 0}
     itemPicks: 1
     boxLocation: {fileID: 339552820}
+    rockSpawns: []
   percentRocksToWin: 50
+  rocks:
+  - {fileID: 1283521649639229692, guid: 709086f77df42024694c3de0dff85bb6, type: 3}
+  - {fileID: 499439535909809569, guid: afca8c2f52aaae14ea05cf8f9ec579a1, type: 3}
+  - {fileID: 4211032995682972955, guid: bb1ab567d805faa4081eacab015ae353, type: 3}
+  - {fileID: 1937478625421952665, guid: 8adf6da0e48847b42a0d414ee4123884, type: 3}
+  - {fileID: 824004057216529653, guid: 75adbbec4ee10e44fb296d0943f9f416, type: 3}
+  - {fileID: 3205456405882078404, guid: a1b924079204d8d4aa525695acaf0a80, type: 3}
   box: {fileID: 712655400}
 --- !u!114 &1771520649 stripped
 MonoBehaviour:
@@ -1282,6 +1294,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1977577375456262944, guid: f7f7eb7202d71eb43b1005954491f6a9,
+        type: 3}
+      propertyPath: lockOnPlanComplete
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6888094637281555672, guid: f7f7eb7202d71eb43b1005954491f6a9,
         type: 3}
       propertyPath: m_LocalPosition.x

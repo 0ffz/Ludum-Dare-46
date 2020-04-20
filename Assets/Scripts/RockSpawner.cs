@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Timeline;
 
 [Serializable]public class RockSpawn {
-    public enum rocks {
+    public enum Rocks {
         Normal,
         Light, 
         Heavy,
@@ -15,25 +15,22 @@ using UnityEngine.Timeline;
         Bouncey
     }
 
-    public rocks spawnObject;
+    public Rocks spawnObject;
     public int spawns;
     public float delay;
 }
 
 public class RockSpawner : MonoBehaviour {
-
-    public GameObject[] rocks;
-    public RockSpawn[] eventSystem;
     public static int TotalSpawns;
     
     void Start() {
         GameState.Instance.OnPlanComplete += StartPlaying;
-        TotalSpawns = eventSystem.Sum(spawn => spawn.spawns);
+        TotalSpawns = GameState.CurrentRound.RockSpawns.Sum(spawn => spawn.spawns);
     }
 
     void StartPlaying() {
-        foreach(RockSpawn rock in eventSystem)
-            StartCoroutine(Wait(rock.delay, rocks[(int) rock.spawnObject], rock.spawns));
+        foreach(RockSpawn rock in GameState.CurrentRound.RockSpawns)
+            StartCoroutine(Wait(rock.delay, GameState.Instance.rocks[(int) rock.spawnObject], rock.spawns));
     }
 
     void Spawn(GameObject rockType, int spawns) {
