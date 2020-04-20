@@ -206,22 +206,22 @@ PrefabInstance:
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
       propertyPath: rounds.Array.data[0].rockSpawns.Array.data[1].delay
-      value: 0.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
       propertyPath: rounds.Array.data[0].rockSpawns.Array.data[2].delay
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
       propertyPath: rounds.Array.data[0].rockSpawns.Array.data[3].delay
-      value: 1.5
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
       propertyPath: rounds.Array.data[0].rockSpawns.Array.data[4].delay
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
@@ -261,7 +261,7 @@ PrefabInstance:
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
       propertyPath: rounds.Array.data[1].rockSpawns.Array.data[1].delay
-      value: 0.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
@@ -271,7 +271,7 @@ PrefabInstance:
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
       propertyPath: rounds.Array.data[1].rockSpawns.Array.data[2].delay
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
@@ -281,7 +281,7 @@ PrefabInstance:
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
       propertyPath: rounds.Array.data[1].rockSpawns.Array.data[3].delay
-      value: 1.5
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
@@ -291,7 +291,7 @@ PrefabInstance:
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
       propertyPath: rounds.Array.data[1].rockSpawns.Array.data[4].delay
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
@@ -311,7 +311,7 @@ PrefabInstance:
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
       propertyPath: rounds.Array.data[2].rockSpawns.Array.data[1].delay
-      value: 0.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
@@ -321,7 +321,7 @@ PrefabInstance:
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
       propertyPath: rounds.Array.data[2].rockSpawns.Array.data[2].delay
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
@@ -331,7 +331,7 @@ PrefabInstance:
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
       propertyPath: rounds.Array.data[2].rockSpawns.Array.data[3].delay
-      value: 1.5
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
@@ -341,7 +341,7 @@ PrefabInstance:
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
       propertyPath: rounds.Array.data[2].rockSpawns.Array.data[4].delay
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
@@ -425,6 +425,21 @@ PrefabInstance:
       propertyPath: rounds.Array.data[1].boxLocation
       value: 
       objectReference: {fileID: 1845522269}
+    - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
+        type: 3}
+      propertyPath: rounds.Array.data[0].rockSpawns.Array.data[0].delay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
+        type: 3}
+      propertyPath: rounds.Array.data[1].rockSpawns.Array.data[0].delay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
+        type: 3}
+      propertyPath: rounds.Array.data[2].rockSpawns.Array.data[0].delay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7478752626678617705, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -563,7 +578,7 @@ PrefabInstance:
     - target: {fileID: 428581207751599087, guid: fd8acb1b999a0f84f9ee3ab12f143018,
         type: 3}
       propertyPath: delta
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd8acb1b999a0f84f9ee3ab12f143018, type: 3}
@@ -637,7 +652,7 @@ PrefabInstance:
     - target: {fileID: 428581207751599087, guid: fd8acb1b999a0f84f9ee3ab12f143018,
         type: 3}
       propertyPath: delta
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd8acb1b999a0f84f9ee3ab12f143018, type: 3}
@@ -786,7 +801,7 @@ PrefabInstance:
     - target: {fileID: 428581207751599087, guid: fd8acb1b999a0f84f9ee3ab12f143018,
         type: 3}
       propertyPath: delta
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd8acb1b999a0f84f9ee3ab12f143018, type: 3}
