@@ -36,8 +36,11 @@ public class IconScript : MonoBehaviour, IDragHandler {
             if (GameState.CurrentRound.itemPicks <= 0)
                 transform.parent.parent.parent.GetComponent<ShopScript>().Hide();
         }
-        else
+        else {
+            _itemCreated.Locked = false;
             _itemCreated.OnMouseDrag();
+        }
+
         GameItem.CurrentlyActive = _itemCreated.gameObject;
         _image.enabled = false;
         _startedDragging = true;
