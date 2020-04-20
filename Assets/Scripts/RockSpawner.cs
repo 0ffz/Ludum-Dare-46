@@ -25,10 +25,10 @@ public class RockSpawner : MonoBehaviour {
     
     void Start() {
         GameState.Instance.OnPlanComplete += StartPlaying;
-        TotalSpawns = GameState.CurrentRound.RockSpawns.Sum(spawn => spawn.spawns);
     }
 
     void StartPlaying() {
+        TotalSpawns = GameState.CurrentRound.RockSpawns.Sum(spawn => spawn.spawns);
         foreach(RockSpawn rock in GameState.CurrentRound.RockSpawns)
             StartCoroutine(Wait(rock.delay, GameState.Instance.rocks[(int) rock.spawnObject], rock.spawns));
     }
