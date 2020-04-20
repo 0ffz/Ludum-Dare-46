@@ -50,7 +50,8 @@ public class IconScript : MonoBehaviour, IDragHandler {
 
         GameItem.CurrentlyActive = _itemCreated.gameObject;
         _image.enabled = false;
-        rawImageIcon.enabled = false;
+        if(rawImageIcon != null)
+            rawImageIcon.enabled = false;
         _startedDragging = true;
     }
 
