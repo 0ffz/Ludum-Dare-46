@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EndBoxScript : MonoBehaviour {
     public GameObject explosion;
-    public static int rocksEntered;
+    public static int RocksEntered;
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.layer != 8) return;
@@ -24,7 +24,7 @@ public class EndBoxScript : MonoBehaviour {
 
         Destroy(otherObject);
 
-        GameState.Instance.RocksEntered++;
+        GameState.CurrentRound.RocksEntered++;
         GameState.Instance.CheckWin();
     }
 }

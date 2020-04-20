@@ -17,6 +17,6 @@ public class GameItem : MonoBehaviour {
 
     public bool Allowed => (CurrentlyActive == null || CurrentlyActive == gameObject)
                            && !GameState.Instance.Dead
-                           && (GameState.Instance.PlanningStage && allowInPlan ||
-                               !GameState.Instance.PlanningStage && allowInPlay);
+                           && (GameState.CurrentRound.PlanningStage && allowInPlan ||
+                               !GameState.CurrentRound.PlanningStage && allowInPlay);
 }

@@ -3,9 +3,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace Rocks {
-
     public class Rock : MonoBehaviour {
-
         ParticleSystem ps;
         SpriteRenderer sr;
         CapsuleCollider2D bc2d;
@@ -21,7 +19,7 @@ namespace Rocks {
 
         private void Update() {
             if (transform.position.y < -50)
-                Die();
+                DieImmediately();
         }
 
         public void Die() {
@@ -29,9 +27,15 @@ namespace Rocks {
             rb2d.bodyType = RigidbodyType2D.Static;
             ps.startDelay = 0;
             sr.enabled = false;
-            GameState.Instance.RocksDead++;
+            GameState.CurrentRound.RocksDead++;
             GameState.Instance.CheckLoss();
             Destroy(gameObject, 1);
+        }
+
+        public void DieImmediately() {
+            GameState.CurrentRound.RocksDead++;
+            GameState.Instance.CheckLoss();
+            Destroy(gameObject);
         }
     }
 }

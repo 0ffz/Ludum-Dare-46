@@ -136,12 +136,12 @@ PrefabInstance:
     - target: {fileID: 3115888148329157741, guid: c77b71a9191c315489d6bde5d8894cc7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.92
+      value: 14.92
       objectReference: {fileID: 0}
     - target: {fileID: 3115888148329157741, guid: c77b71a9191c315489d6bde5d8894cc7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.66
+      value: 0.47
       objectReference: {fileID: 0}
     - target: {fileID: 3115888148329157741, guid: c77b71a9191c315489d6bde5d8894cc7,
         type: 3}
@@ -889,6 +889,12 @@ MonoBehaviour:
     - {fileID: 1771520649}
     - {fileID: 1156290413}
     - {fileID: 0}
+    itemPicks: 1
+  - items:
+    - {fileID: 1771520649}
+    - {fileID: 1156290413}
+    - {fileID: 0}
+    itemPicks: 1
   percentRocksToWin: 50
 --- !u!114 &1771520649 stripped
 MonoBehaviour:

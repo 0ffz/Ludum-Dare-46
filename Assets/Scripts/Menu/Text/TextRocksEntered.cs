@@ -11,6 +11,6 @@ public class TextRocksEntered : MonoBehaviour {
     }
 
     private void UpdateText() {
-        GetComponent<TextMeshProUGUI>().text = GameState.Instance.RocksEntered + "/" + GameState.Instance.TotalRocksToWin;
+        GetComponent<TextMeshProUGUI>().text = GameState.CurrentRound.RocksEntered + "/" + GameState.Instance.TotalRocksToWin;
     }
 }

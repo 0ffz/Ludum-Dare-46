@@ -2,12 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class IconScript : MonoBehaviour, IDragHandler {
     Camera _cam;
+    [NonSerialized] public TextMeshProUGUI ItemsLeftText;
     private RawImage _image;
 
     void Start() {
@@ -26,8 +28,14 @@ public class IconScript : MonoBehaviour, IDragHandler {
      */
     public void OnDrag(PointerEventData eventData) {
         Vector3 mousePos = _cam.ScreenToWorldPoint(Input.mousePosition);
-        if (_itemCreated == null)
+        if (_itemCreated == null) {
+            if (GameState.CurrentRound.itemPicks <= 0) return;
             _itemCreated = Instantiate(attachedItem, new Vector3(mousePos.x, mousePos.y), Quaternion.identity);
+            int items = --GameState.CurrentRound.itemPicks;
+            ItemsLeftText.text = items + " Left";
+            if (GameState.CurrentRound.itemPicks <= 0)
+                transform.parent.parent.parent.GetComponent<ShopScript>().Hide();
+        }
         else
             _itemCreated.OnMouseDrag();
         GameItem.CurrentlyActive = _itemCreated.gameObject;

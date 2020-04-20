@@ -14,13 +14,18 @@ using UnityEngine.SceneManagement;
  */
 public class GameState : MonoBehaviour {
     [Serializable]
-    public class MultiDimensionalInt {
+    public class RoundInfo {
         public FreeMovable[] items;
+        public int itemPicks;
+        [NonSerialized] public int RocksDead = 0;
+        [NonSerialized] public int RocksEntered = 0;
+        [NonSerialized] public bool PlanningStage = true;
     }
 
-    public MultiDimensionalInt[] rounds;
-
     public static GameState Instance;
+    public static RoundInfo CurrentRound => Instance.rounds[Instance.Round - 1];
+
+    public RoundInfo[] rounds;
 
     public double percentRocksToWin = 50;
 
@@ -29,9 +34,6 @@ public class GameState : MonoBehaviour {
     public event UnitEventHandler OnPlanComplete;
     public event UnitEventHandler OnRoundStart;
 
-    [NonSerialized] public int RocksDead = 0; //TODO increment
-    [NonSerialized] public int RocksEntered = 0;
-    [NonSerialized] public bool PlanningStage = true;
     [NonSerialized] public bool Dead = false;
     [NonSerialized] public int Round = 1;
 
@@ -58,14 +60,14 @@ public class GameState : MonoBehaviour {
     }
 
     public void FinishPlanning() {
-        Instance.PlanningStage = false;
+        CurrentRound.PlanningStage = false;
         OnPlanComplete?.Invoke();
     }
 
     public event UnitEventHandler OnRockEnter;
 
     public void CheckWin() {
-        if (RocksEntered >= TotalRocksToWin) OnGameWin?.Invoke();
+        if (CurrentRound.RocksEntered >= TotalRocksToWin) OnGameWin?.Invoke();
         OnRockEnter?.Invoke();
     }
 
@@ -73,7 +75,7 @@ public class GameState : MonoBehaviour {
 
     public void CheckLoss() {
         //lose once it's impossible to reach percent of rocks required for win
-        if (RockSpawner.TotalSpawns - RocksDead < TotalRocksToWin) {
+        if (RockSpawner.TotalSpawns - CurrentRound.RocksDead < TotalRocksToWin) {
             OnGameLose?.Invoke();
             Dead = true;
         }
@@ -84,9 +86,6 @@ public class GameState : MonoBehaviour {
     public void StartRound() {
         foreach (var rock in FindObjectsOfType<Rock>())
             Destroy(rock.gameObject);
-        PlanningStage = true;
-        RocksDead = 0;
-        RocksEntered = 0;
         OnRoundStart?.Invoke();
     }
 
