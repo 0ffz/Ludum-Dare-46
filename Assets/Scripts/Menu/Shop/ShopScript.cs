@@ -35,6 +35,7 @@ public class ShopScript : MonoBehaviour {
             riUI.texture = sr.sprite.texture;
             IconScript iconscript = newItem.GetComponent<IconScript>();
             iconscript.attachedItem = item;
+            iconscript.SetIcon();
             iconscript.ItemsLeftText = itemsLeftText;
             riUI.transform.SetParent(imageList.transform, false);
         }

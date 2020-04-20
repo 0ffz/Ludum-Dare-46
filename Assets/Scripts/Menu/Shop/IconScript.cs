@@ -12,15 +12,22 @@ public class IconScript : MonoBehaviour, IDragHandler {
     [NonSerialized] public TextMeshProUGUI ItemsLeftText;
     private RawImage _image;
 
+    public FreeMovable attachedItem;
+
+    private FreeMovable _itemCreated;
+    private bool _startedDragging;
+    public RawImage rawImageIcon;
+
     void Start() {
         _image = GetComponent<RawImage>();
         _cam = Camera.main;
     }
 
-    public FreeMovable attachedItem;
-
-    private FreeMovable _itemCreated;
-    private bool _startedDragging;
+    public void SetIcon() {
+        rawImageIcon = transform.GetChild(0).GetComponent<RawImage>();
+        if(attachedItem.icon == null) Destroy(rawImageIcon.gameObject);
+        else rawImageIcon.texture = attachedItem.icon;
+    }
 
     /**
      * As long as we're dragging we'll call the OnMouseDrag method of the instantiated FreeMovable.
@@ -43,6 +50,7 @@ public class IconScript : MonoBehaviour, IDragHandler {
 
         GameItem.CurrentlyActive = _itemCreated.gameObject;
         _image.enabled = false;
+        rawImageIcon.enabled = false;
         _startedDragging = true;
     }
 

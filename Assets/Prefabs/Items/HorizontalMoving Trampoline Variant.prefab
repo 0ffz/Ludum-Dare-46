@@ -7,10 +7,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1803678233380995474, guid: e736e64848206934a9898dad74d0cf03,
+        type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 2800000, guid: 3b09106ae65ad3744a0b149ce2897e19, type: 3}
     - target: {fileID: 7935159943133680560, guid: e736e64848206934a9898dad74d0cf03,
         type: 3}
       propertyPath: m_Name
-      value: HorizontalMoving Trampoline
+      value: HorizontalMoving Trampoline Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7935159943133680573, guid: e736e64848206934a9898dad74d0cf03,
         type: 3}
