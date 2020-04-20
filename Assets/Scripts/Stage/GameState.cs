@@ -14,7 +14,7 @@ using UnityEngine.SceneManagement;
  */
 public class GameState : MonoBehaviour {
 
-    [System.Serializable]
+    [Serializable]
     public class MultiDimensionalInt {
         public GameObject[] items;
     }
@@ -45,13 +45,12 @@ public class GameState : MonoBehaviour {
         Instance = this;
         if (SceneManager.GetActiveScene().buildIndex > LatestStage)
             PlayerPrefs.SetInt("latestStage", LatestStage + 1);
+        
+        if (!SceneManager.GetSceneByName("PlanMenu").isLoaded)
+            SceneManager.LoadScene("PlanMenu", LoadSceneMode.Additive);
     }
 
     private void Start() {
-        print("Started gamestate");
-
-        if (!SceneManager.GetSceneByName("PlanMenu").isLoaded)
-            SceneManager.LoadScene("PlanMenu", LoadSceneMode.Additive);
 
         StartRound();
     }
