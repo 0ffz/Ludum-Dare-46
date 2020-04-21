@@ -640,7 +640,7 @@ Transform:
   m_GameObject: {fileID: 356232475}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.6, y: 8.09, z: 0}
-  m_LocalScale: {x: 103.7472, y: 57.52859, z: 1}
+  m_LocalScale: {x: 120.34675, y: 69.6096, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
@@ -1062,12 +1062,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c77b71a9191c315489d6bde5d8894cc7, type: 3}
---- !u!212 &1161145812 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 7464921631335126001, guid: c84b3e5be8220d34b825d5a04eb72442,
-    type: 3}
-  m_PrefabInstance: {fileID: 551401476}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1197646880
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,7 +1096,7 @@ MonoBehaviour:
   scrollSens: 0.5
   minCamSize: 10
   maxCamSize: 20
-  background: {fileID: 1161145812}
+  background: {fileID: 356232476}
 --- !u!81 &1197646882
 AudioListener:
   m_ObjectHideFlags: 0

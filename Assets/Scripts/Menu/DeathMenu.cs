@@ -19,4 +19,8 @@ public class DeathMenu : MonoBehaviour {
     public void SkipStage() {
         GameState.LoadNextStage();
     }
+
+    public void QuitGame() {
+        Application.Quit();
+    }
 }

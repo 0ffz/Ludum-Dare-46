@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 
 public class PlayingMenu : MonoBehaviour {
+    public GameObject DeathMenu;
+
     private void Start() {
         GameState.Instance.OnGameWin += () => { transform.GetChild(0).gameObject.SetActive(true); };
     }
@@ -15,6 +17,6 @@ public class PlayingMenu : MonoBehaviour {
     }
 
     public void Restart() {
-        GameState.RestartStage();
+        DeathMenu.SetActive(true);
     }
 }
