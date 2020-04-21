@@ -15,4 +15,8 @@ public class DeathMenu : MonoBehaviour {
     public void Restart() {
         GameState.RestartStage();
     }
+
+    public void SkipStage() {
+        GameState.LoadNextStage();
+    }
 }
