@@ -8,6 +8,7 @@ public class TextRocksEntered : MonoBehaviour {
     void OnEnable() {
         GameState.Instance.OnRockEnter += UpdateText;
         GameState.Instance.OnRoundStart += UpdateText;
+        GameState.Instance.OnPlanComplete += UpdateText;
     }
 
     private void UpdateText() {
