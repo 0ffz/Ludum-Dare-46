@@ -1084,7 +1084,7 @@ PrefabInstance:
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
       propertyPath: rounds.Array.data[1].itemPicks
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
