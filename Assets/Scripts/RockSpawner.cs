@@ -24,6 +24,7 @@ public class RockSpawner : MonoBehaviour {
     public static int TotalSpawns;
     
     void Start() {
+        transform.position = new Vector3(transform.position.x, transform.position.y, -9);
         GameState.Instance.OnPlanComplete += StartPlaying;
     }
 

@@ -10,6 +10,7 @@ namespace Rocks {
         Rigidbody2D rb2d;
 
         void Start() {
+            transform.position = new Vector3(transform.position.x, transform.position.y, 1);
             ps = GetComponent<ParticleSystem>();
             sr = GetComponent<SpriteRenderer>();
             bc2d = GetComponent<CapsuleCollider2D>();

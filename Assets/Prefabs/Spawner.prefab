@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3115888148329157739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.727454, y: 6.507778, z: 0}
+  m_LocalPosition: {x: -9.727454, y: 6.507778, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 679998d564b781749966a9608f87f5e0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bfcdcf9980ced5c4a8a181ee9952f0a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -94,14 +94,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba843eb724f1d6249884d1512f50c078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rocks:
-  - {fileID: 1283521649639229692, guid: 709086f77df42024694c3de0dff85bb6, type: 3}
-  - {fileID: 499439535909809569, guid: afca8c2f52aaae14ea05cf8f9ec579a1, type: 3}
-  - {fileID: 4211032995682972955, guid: bb1ab567d805faa4081eacab015ae353, type: 3}
-  - {fileID: 1937478625421952665, guid: 8adf6da0e48847b42a0d414ee4123884, type: 3}
-  - {fileID: 824004057216529653, guid: 75adbbec4ee10e44fb296d0943f9f416, type: 3}
-  - {fileID: 3205456405882078404, guid: a1b924079204d8d4aa525695acaf0a80, type: 3}
-  eventSystem:
-  - spawnObject: 0
-    spawns: 1
-    delay: 0
