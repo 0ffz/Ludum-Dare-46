@@ -947,7 +947,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Use rick-click and drag to move the camera
+  m_text: 'Use right-click and drag to move the camera
 
 '
   m_isRightToLeft: 0
