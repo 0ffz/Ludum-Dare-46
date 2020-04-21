@@ -11,6 +11,16 @@ PrefabInstance:
       propertyPath: dir
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 62802825984116723, guid: 6430b378fcd2d6442bc0832d4d8a0462,
+        type: 3}
+      propertyPath: InitialModule.startRotation.minScalar
+      value: -0.17453292
+      objectReference: {fileID: 0}
+    - target: {fileID: 62802825984116723, guid: 6430b378fcd2d6442bc0832d4d8a0462,
+        type: 3}
+      propertyPath: InitialModule.startRotation.scalar
+      value: 0.17453292
+      objectReference: {fileID: 0}
     - target: {fileID: 2977246689333594554, guid: 6430b378fcd2d6442bc0832d4d8a0462,
         type: 3}
       propertyPath: icon
