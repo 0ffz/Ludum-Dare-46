@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 3167268502315385955}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 13.39328, y: 13.39328, z: 13.39328}
   m_Children: []
   m_Father: {fileID: 3167268503145346776}
   m_RootOrder: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 679998d564b781749966a9608f87f5e0, type: 3}
-  m_Color: {r: 0.735849, g: 0.735849, b: 0.735849, a: 0.33333334}
+  m_Color: {r: 0.735849, g: 0.735849, b: 0.735849, a: 0.21176471}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -93,8 +93,9 @@ GameObject:
   - component: {fileID: 3167268503145346779}
   - component: {fileID: 3167268503145346777}
   - component: {fileID: 3167268503145346782}
+  - component: {fileID: 863436560618664885}
   m_Layer: 0
-  m_Name: Bomb Placeholder
+  m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 3167268503145346778}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.93, y: -2.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 3167268502315385952}
   m_Father: {fileID: 0}
@@ -154,7 +155,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2a6adae5e6152a64db2417e7289b1965, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d5505f5ef7ce4604980cb674858ac7d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -193,5 +194,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b72c11171316a4fa3f08d768deffe3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodeRadius: 2
+  explodeRadius: 5
   explodeSpeed: 13
+--- !u!114 &863436560618664885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3167268503145346778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd62f7c7c5bf0a4ea064068d6bf9423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allowInPlan: 1
+  allowInPlay: 0
+  lockOnPlanComplete: 1
+  icon: {fileID: 0}
