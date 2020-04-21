@@ -998,7 +998,7 @@ PrefabInstance:
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
       propertyPath: rounds.Array.data[2].itemPicks
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
@@ -1096,7 +1096,7 @@ PrefabInstance:
         type: 3}
       propertyPath: rounds.Array.data[1].items.Array.data[4]
       value: 
-      objectReference: {fileID: 2122205863763484703, guid: 63602a2254643eb479eb1c6aecfa7ad1,
+      objectReference: {fileID: 3236971434313767518, guid: 86a2d478857eb674b9761cbea03031c6,
         type: 3}
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
@@ -1108,13 +1108,13 @@ PrefabInstance:
         type: 3}
       propertyPath: rounds.Array.data[2].items.Array.data[4]
       value: 
-      objectReference: {fileID: 1977577375456262944, guid: f7f7eb7202d71eb43b1005954491f6a9,
+      objectReference: {fileID: -9087422797993152854, guid: d201e9d85be2e2e48a2a3ad85a0921af,
         type: 3}
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
       propertyPath: rounds.Array.data[2].items.Array.data[5]
       value: 
-      objectReference: {fileID: 5041204432233582828, guid: 5490caa6af742a64cb46e857b81add36,
+      objectReference: {fileID: -1803678233380995474, guid: e736e64848206934a9898dad74d0cf03,
         type: 3}
     - target: {fileID: 7478752626678617704, guid: 78dd973bcdb36b146922a2504fafb782,
         type: 3}
