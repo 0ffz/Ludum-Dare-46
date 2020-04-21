@@ -855,8 +855,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 36.48, y: 18.89}
-  m_SizeDelta: {x: 21.16, y: -59.55}
+  m_AnchoredPosition: {x: 36.48, y: 27.099976}
+  m_SizeDelta: {x: 21.2, y: -76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &526582628
 MonoBehaviour:
@@ -1108,8 +1108,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 101.98, y: 18.89}
-  m_SizeDelta: {x: 152.03, y: -59.55}
+  m_AnchoredPosition: {x: 101.98, y: 27.099976}
+  m_SizeDelta: {x: 152, y: -76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &890305192
 MonoBehaviour:
@@ -1194,8 +1194,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 102.2, y: 25}
-  m_SizeDelta: {x: 159.2, y: 35.93}
+  m_AnchoredPosition: {x: 102.2, y: 32.6}
+  m_SizeDelta: {x: 159.2, y: 51.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1015106920
 MonoBehaviour:
@@ -1243,10 +1243,10 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24
+  m_fontSize: 45.8
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 17
@@ -1404,7 +1404,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -100, y: -10}
-  m_SizeDelta: {x: 187.77, y: 75}
+  m_SizeDelta: {x: 213.4, y: 75}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1092083180
 MonoBehaviour:
@@ -1464,10 +1464,10 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24
+  m_fontSize: 37.6
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 17
@@ -2739,10 +2739,10 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24
+  m_fontSize: 67.1
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 17
