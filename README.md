@@ -1,4 +1,9 @@
-# Ludum-Dare-46
+# Rock Bottom
+
+<div align="center">
+
+![Game preview gif](https://static.jam.host/raw/91e/7/z/32da0.gif)
+</div>
 
 ## License
 
